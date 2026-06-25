@@ -1,0 +1,15 @@
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{28} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Our workflow/activity logs at DEBUG; Temporal's own chatter at INFO. -->
+  <logger name="space.harbour.cloud.orders" level="DEBUG"/>
+  <logger name="io.temporal" level="INFO"/>
+
+  <root level="INFO">
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>
